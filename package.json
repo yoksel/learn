@@ -1,0 +1,28 @@
+{
+  "name": "learn",
+  "version": "0.0.0",
+  "description": "Just playground",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yoksel/learn.git"
+  },
+  "author": "yoksel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yoksel/learn/issues"
+  },
+  "homepage": "https://github.com/yoksel/learn",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-sass": "~0.7.0",
+    "grunt-autoprefixer": "~0.6.5",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-open": "~0.2.3",
+    "grunt-contrib-clean": "~0.5.0"
+  }
+}
