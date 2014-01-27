@@ -18,6 +18,12 @@ module.exports = function (grunt) {
       css_res: [
         'assets/css'
       ],
+      img_src: [
+        '_src/img'
+      ],
+      img_res: [
+        'assets/img'
+      ],
       js: [
         '_src/js/*.js'
       ]
@@ -95,7 +101,18 @@ module.exports = function (grunt) {
         '_src/css/style.unprefixed.css'
       ]
     },
-
+    svgmin: {                        // Task
+        options: {                    // Configuration that will be passed directly to SVGO
+            plugins: [{
+                removeViewBox: false
+            }]
+        },
+        dist: {                                            // Target
+            files: {                                    // Dictionary of files
+                '_src/img/star2.svg': '_src/img/star.svg'        // 'destination': 'source'
+            }
+        }
+    },    
     /**
      * https://npmjs.org/package/grunt-contrib-watch
      * Now with livereload
@@ -135,12 +152,14 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-svgmin');
 
   /**
    * Default task
    * Run `grunt` on the command line
    */
   grunt.registerTask('default', [
+    'svgmin',
     'connect',
     'open',
     'watch'
