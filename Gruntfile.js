@@ -112,7 +112,17 @@ module.exports = function (grunt) {
                 '_src/img/star2.svg': '_src/img/star.svg'        // 'destination': 'source'
             }
         }
-    },    
+    },  
+    imagemin: {                          // Task
+      dynamic: {                         // Another target
+        files: [{
+          expand: true,                  // Enable dynamic expansion
+          cwd: '_src/img',                   // Src matches are relative to this path
+          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+          dest: 'assets/img'                  // Destination path prefix
+        }]
+      }
+    },  
     /**
      * https://npmjs.org/package/grunt-contrib-watch
      * Now with livereload
@@ -153,6 +163,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-svgmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   /**
    * Default task
@@ -160,6 +171,7 @@ module.exports = function (grunt) {
    */
   grunt.registerTask('default', [
     'svgmin',
+    'imagemin',
     'connect',
     'open',
     'watch'
