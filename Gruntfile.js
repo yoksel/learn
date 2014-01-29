@@ -171,7 +171,7 @@ module.exports = function (grunt) {
    */
   grunt.registerTask('default', [
     'svgmin',
-    // 'imagemin',
+    'imagemin',
     'connect',
     'open',
     'watch'

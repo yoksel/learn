@@ -1,5 +1,8 @@
 console.log("Hello!");
 
+// Progress
+//----------------------------------------
+
 var interval = setInterval(showProgress,50);	
 
 var progress_min = 0;
@@ -14,13 +17,10 @@ percents_box.classList.add(percents_box_class);
 
 var percents_box_state = percents_box.cloneNode();
 
-progress_elem.insertBefore(percents_box);
-progress_state.insertBefore(percents_box_state);
+progress_elem.insertBefore(percents_box, null);
+progress_state.insertBefore(percents_box_state, null);
 
 var percents_boxes_list = progress_elem.querySelectorAll("." + percents_box_class);
-
-// console.log (progress_state)
-console.log (percents_boxes_list)
 
 function showProgress() {
 	if ( progress_steps < progress_max ) {
@@ -37,6 +37,9 @@ function showProgress() {
 	}
 
 }
+
+// Rating
+//----------------------------------------
 
 var rating = document.querySelector(".rating");
 var item_class = "rating__item";
@@ -90,3 +93,26 @@ for ( var i = 0; i < rating_radio_list.length; i++ ){
 		setActiveClass( rating, item_active_class );
 	}
 }
+
+// Browsers
+//----------------------------------------
+
+var images = document.querySelectorAll(".browsers__item");
+
+for ( var i = 0; i < images.length; i++ ) {
+	var image_elem = images[i];
+	var image_url = image_elem.getAttribute("src");
+	var image = new Image();
+	image.src = image_url;
+	
+	if ( image.width == 0 && image.height == 0 ){
+		var image_class = image_elem.getAttribute("class");
+		var image_alt = image_elem.getAttribute("alt");
+		var replacer = document.createElement("span");
+		replacer.innerHTML = image_alt
+		replacer.setAttribute("class", image_class);
+
+		image_elem.parentNode.replaceChild(replacer, image_elem);
+	}
+}
+

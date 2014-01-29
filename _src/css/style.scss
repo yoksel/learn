@@ -6,8 +6,11 @@ BODY {
     font: 16px/1.4 Verdana, sans-serif;
     }
 .hide {
-    display: none;
-    }    
+    visibility: hidden;
+    height: 0;
+    } 
+/* Layout
+---------------------------------------- */
 .wrapper {
     min-width: 500px;
     max-width: 1000px;
@@ -30,7 +33,8 @@ BODY {
     .section--progress {
         background-position: -28px -75px;    
         }        
-
+/* Rating
+---------------------------------------- */
 .rating {
     padding: 0;
     }
@@ -66,14 +70,15 @@ BODY {
             .rating__item--hover .rating__label {
                background: orangered;
             }
-
+/* Progress
+---------------------------------------- */
 .progress {
     position: relative;
     height: $progress-height;
     width: $progress-width;
     overflow: hidden;
     box-shadow: inset 0 1px 1px 1px rgba(200,200,200,.9);
-    /*border-radius: 7px;*/
+    border-radius: 7px;
     font-size: 9px;
     color: #000;
     }
@@ -82,9 +87,9 @@ BODY {
         z-index: 1;
         width: 0;
         height: $progress-height;
-        background: skyblue;
-        /*background: linear-gradient(#abff58, #28bf14 51%, #28bf14 62%, #8bda1a 84%,#8bda1a 95%, #28bf14);*/
-        /*border-radius: 7px;*/
+        background: #28bf14;
+        background: linear-gradient(#abff58, #28bf14 51%, #28bf14 62%, #8bda1a 84%,#8bda1a 95%, #28bf14);
+        border-radius: 7px;
         overflow: hidden;
         animation: progress 5s linear infinite alternate;
         color: white;
@@ -98,8 +103,23 @@ BODY {
         line-height: $progress-height;
         }    
 
-/*@keyframes progress {
-    100% {
-        width: 100%;
-    }
-}*/
+/* Browsers
+---------------------------------------- */
+.browsers__item {
+    vertical-align: middle;
+    }        
+.browsers__item--chrome {
+    color: green;
+}
+.browsers__item--firefox {
+    color: orange;
+}        
+.browsers__item--opera {
+    color: red;
+}
+.browsers__item--safari {
+    color: steelblue;
+}
+.browsers__item--ie {
+    color: skyblue;
+}
