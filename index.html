@@ -6,34 +6,52 @@
     </head>    
     <body>
         <div class="wrapper">
-            <section class="section section--intro">
+            <section class="section section--intro hide">
                 Тут какой-то умный текст
             </section>
-            <section class="section section--rating">
+            <section class="section section--rating hide">
                 <ul class="rating">
-                    <li class="rating__item">
-                        <input type="radio" id="rate-1"><label for="rate-1"></label>
-                    </li>
-                    <li class="rating__item">
-                        <input type="radio" id="rate-2"><label for="rate-2"></label>
-                    </li>
-                    <li class="rating__item">
-                        <input type="radio" id="rate-3"><label for="rate-3"></label>
-                    </li>
-                    <li class="rating__item">
-                        <input type="radio" id="rate-4"><label for="rate-4"></label>
-                    </li>
-                    <li class="rating__item">
-                        <input type="radio" id="rate-5"><label for="rate-5"></label>
-                    </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-1"  name="rating__radio" class="rating__radio">
+                    <label for="rate-1" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-2" name="rating__radio" class="rating__radio">
+                    <label for="rate-2" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-3" name="rating__radio" class="rating__radio">
+                    <label for="rate-3" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-4" name="rating__radio" class="rating__radio">
+                    <label for="rate-4" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-5" name="rating__radio" class="rating__radio">
+                    <label for="rate-5" class="rating__label"></label>
+                  </li>
                 </ul>
             </section>    
-            <section class="section section--progress">
+            <section class="section section--progress hide">
                 <div class="progress">
-                  <span></span>
+                  <span class="progress__state"></span>
                 </div>
-            </section>    
+            </section> 
+            <section class="section section--button hide">
+                <button>hello</button>
+            </section>
+            <section class="section section--browsers">
+
+<img src="http://img-fotki.yandex.ru/get/5413/5091629.67/0_5ba11_d4e50331_M.png" alt="">
+<img src="http://img-fotki.yandex.ru/get/5314/5091629.67/0_5ba15_745b5d41_M.png" alt="">
+<img src="http://img-fotki.yandex.ru/get/4421/5091629.67/0_5ba17_52d62406_M.png" alt="">
+<img src="http://img-fotki.yandex.ru/get/4714/5091629.67/0_5ba13_2dba48cc_M.png" alt="">
+<img src="http://img-fotki.yandex.ru/get/5413/5091629.67/0_5ba12_81d03a82_M.png" alt="">
+
+            </section>
         </div>
+        <script src="/assets/js/script.js"></script>
         <script src="//localhost:35740/livereload.js"></script>
     </body>
 </html>

@@ -3,6 +3,10 @@ BODY {
   font: 16px/1.4 Verdana, sans-serif;
 }
 
+.hide {
+  display: none;
+}
+
 .wrapper {
   min-width: 500px;
   max-width: 1000px;
@@ -16,8 +20,12 @@ BODY {
 }
 
 .section {
-  padding-bottom: 40px;
-  background: url(/task.png) -27px 0 no-repeat;
+  padding-bottom: 20px;
+  /*background: url(/task.png) -27px 0 no-repeat;*/
+}
+
+.section--intro {
+  background: none;
 }
 
 .section--rating {
@@ -25,7 +33,7 @@ BODY {
 }
 
 .section--progress {
-  background-position: -28px -80px;
+  background-position: -28px -75px;
 }
 
 .rating {
@@ -46,62 +54,67 @@ BODY {
   height: 16px;
   margin-right: 2px;
 }
-.rating__item INPUT {
+
+.rating__radio {
   display: none;
 }
-.rating__item LABEL {
+
+.rating__label {
   display: block;
   width: 16px;
   height: 16px;
-  background: url(/assets/img/stars.png) center bottom no-repeat;
+  /*background: url(/assets/img/stars.png) center bottom no-repeat;*/
+  background: gold;
   cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
-.rating__item LABEL:hover {
+.rating__label:hover {
   background-position: center top;
+}
+
+.rating__item--active .rating__label,
+.rating__item--hover .rating__label {
+  background: orangered;
 }
 
 .progress {
   position: relative;
   height: 14px;
   width: 210px;
-  /*border: 1px solid silver;*/
-  -webkit-box-shadow: inset 0 1px 1px #c8c8c8;
-  /*border: 1px solid silver;*/
-  box-shadow: inset 0 1px 1px #c8c8c8;
-  border-radius: 7px;
+  overflow: hidden;
+  -webkit-box-shadow: inset 0 1px 1px 1px rgba(200, 200, 200, 0.9);
+  box-shadow: inset 0 1px 1px 1px rgba(200, 200, 200, 0.9);
+  /*border-radius: 7px;*/
   font-size: 9px;
+  color: #000;
 }
-.progress:before, .progress SPAN:before {
-  content: "12";
-  display: block;
+
+.progress__state {
   position: absolute;
-  left: 0;
-  width: 210px;
-  text-align: center;
-}
-.progress SPAN {
-  position: absolute;
+  z-index: 1;
   width: 0;
   height: 14px;
-  background: #00CD00;
-  background: -webkit-gradient(linear, left top, left bottom, from(#86ff33), color-stop(#00cd00), to(#86ff33));
-  background: -webkit-linear-gradient(#86ff33, #00cd00, #86ff33);
-  background: linear-gradient(#86ff33, #00cd00, #86ff33);
-  border-radius: 7px;
+  background: skyblue;
+  /*background: linear-gradient(#abff58, #28bf14 51%, #28bf14 62%, #8bda1a 84%,#8bda1a 95%, #28bf14);*/
+  /*border-radius: 7px;*/
   overflow: hidden;
   -webkit-animation: progress 5s linear infinite alternate;
   animation: progress 5s linear infinite alternate;
   color: white;
 }
 
-@-webkit-keyframes progress {
-  100% {
-    width: 100%;
-  }
+.progress__percents {
+  display: block;
+  position: absolute;
+  width: 210px;
+  height: 14px;
+  text-align: center;
+  line-height: 14px;
 }
 
-@keyframes progress {
-  100% {
-    width: 100%;
-  }
-}
+/*@keyframes progress {
+    100% {
+        width: 100%;
+    }
+}*/

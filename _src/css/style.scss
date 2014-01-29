@@ -1,7 +1,13 @@
+$progress-width: 210px;
+$progress-height: 14px;
+
 BODY {
     background: ivory;
     font: 16px/1.4 Verdana, sans-serif;
     }
+.hide {
+    display: none;
+    }    
 .wrapper {
     min-width: 500px;
     max-width: 1000px;
@@ -12,14 +18,17 @@ BODY {
     border: 1px solid #DDD;
     }    
     .section {
-        padding-bottom: 40px;
-        background: url(/task.png) -27px 0 no-repeat;
+        padding-bottom: 20px;
+        /*background: url(/task.png) -27px 0 no-repeat;*/
+        }
+    .section--intro {
+        background: none;
         }
     .section--rating {
         background-position: -27px -36px;    
         } 
     .section--progress {
-        background-position: -28px -80px;    
+        background-position: -28px -75px;    
         }        
 
 .rating {
@@ -37,53 +46,60 @@ BODY {
         width: 16px;
         height: 16px;
         margin-right: 2px;
-        INPUT {
+        }
+        .rating__radio {
             display: none;
             }
-        LABEL {
+        .rating__label {
             display: block;
             width: 16px;
             height: 16px;
-            background: url(/assets/img/stars.png) center bottom no-repeat;
+            /*background: url(/assets/img/stars.png) center bottom no-repeat;*/
+            background: gold;
             cursor: pointer;
+            transition: all .3s;
             &:hover {
               background-position: center top;  
+                }
             }
-            }    
-        }
+            .rating__item--active .rating__label,
+            .rating__item--hover .rating__label {
+               background: orangered;
+            }
 
 .progress {
     position: relative;
-    height: 14px;
-    width: 210px;
-    /*border: 1px solid silver;*/
-    box-shadow: inset 0 1px 1px rgba(200,200,200,1);
-    border-radius: 7px;
+    height: $progress-height;
+    width: $progress-width;
+    overflow: hidden;
+    box-shadow: inset 0 1px 1px 1px rgba(200,200,200,.9);
+    /*border-radius: 7px;*/
     font-size: 9px;
-    &:before,
-    & SPAN:before {
-        content: "12";   
-        display: block;
+    color: #000;
+    }
+    .progress__state {
         position: absolute;
-        left: 0;
-        width: 210px;
-        text-align: center;
-        }
-    SPAN {
-        position: absolute;
+        z-index: 1;
         width: 0;
-        height: 14px;
-        background: #00CD00;
-        background: linear-gradient( #86FF33, #00CD00, #86FF33);
-        border-radius: 7px;
+        height: $progress-height;
+        background: skyblue;
+        /*background: linear-gradient(#abff58, #28bf14 51%, #28bf14 62%, #8bda1a 84%,#8bda1a 95%, #28bf14);*/
+        /*border-radius: 7px;*/
         overflow: hidden;
         animation: progress 5s linear infinite alternate;
         color: white;
         }
-    }            
+    .progress__percents {
+        display: block;
+        position: absolute;
+        width: $progress-width;
+        height: $progress-height;
+        text-align: center;
+        line-height: $progress-height;
+        }    
 
-@keyframes progress {
+/*@keyframes progress {
     100% {
         width: 100%;
     }
-}
+}*/
