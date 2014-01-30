@@ -39,8 +39,6 @@ var progress_state = progress_elem.querySelector(".progress__state");
 
 var percents_box = document.createElement("span");
 var percents_box_class = "progress__percents";
-// percents_box.classList.add("percents_box_class_111");
-// percents_box.classList.add("percents_box_class_333");
 
 addClass( percents_box, percents_box_class );
 
