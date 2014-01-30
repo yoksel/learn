@@ -1,14 +1,43 @@
 $progress-width: 210px;
 $progress-height: 14px;
 
+@import "reset";
+
 BODY {
     background: ivory;
     font: 16px/1.4 Verdana, sans-serif;
     }
-.hide {
-    visibility: hidden;
-    height: 0;
+H1, H2, H3, H4 {
+    font-weight: normal;
     } 
+H1 {
+    margin-bottom: 18px;
+    font-size: 24px;
+    line-height: 1;
+    }  
+P {
+    margin-bottom: 1em;
+    text-indent: 1em;
+    }   
+A {
+    color: #0070ed;
+    }     
+.pseudo-link {
+    border-bottom: 1px dotted;
+    color: #353434;
+    cursor: pointer;
+    }
+.hide {
+    display: none;
+    } 
+.list--ul__item:before {
+    content: "\2014";
+    position: relative;
+    margin-left: -1.5em;
+    margin-right: .5em;
+    color: #858585;
+    }   
+     
 /* Layout
 ---------------------------------------- */
 .wrapper {
@@ -19,10 +48,11 @@ BODY {
     box-sizing: border-box;
     background: white;
     border: 1px solid #DDD;
+    opacity: .7;
     }    
     .section {
-        padding-bottom: 20px;
-        /*background: url(/task.png) -27px 0 no-repeat;*/
+        padding-bottom: 30px;
+        background: url(/task.png) -27px 0 no-repeat;
         }
     .section--intro {
         background: none;
@@ -32,7 +62,16 @@ BODY {
         } 
     .section--progress {
         background-position: -28px -75px;    
-        }        
+        } 
+    .section--button {
+        background-position: -27px -105px;    
+        }      
+    .section--browsers {
+        }  
+    .section--text {
+        
+        }  
+                      
 /* Rating
 ---------------------------------------- */
 .rating {
@@ -70,6 +109,7 @@ BODY {
             .rating__item--hover .rating__label {
                background: orangered;
             }
+
 /* Progress
 ---------------------------------------- */
 .progress {
@@ -103,23 +143,76 @@ BODY {
         line-height: $progress-height;
         }    
 
+/* Button
+---------------------------------------- */
+.button {
+    /*background: orange;
+    border: 2px solid red;*/
+    padding: 1px 17px;
+    border: 1px solid #CCC;
+    border-color: rgba(0,0,0,.02) rgba(0,0,0,.07) rgba(0,0,0,.25);
+    border-radius: 8px;
+    background: #E2E2E2;
+    background: linear-gradient(#f2f2f2 30%, #e2e2e2 70%);
+    text-shadow: 0 1px 0 rgba(255,255,255,.75);
+    font: 11px/1.4 Verdana, sans-serif;
+    
+}        
 /* Browsers
 ---------------------------------------- */
 .browsers__item {
+    display: inline-block;
     vertical-align: middle;
-    }        
-.browsers__item--chrome {
-    color: green;
-}
-.browsers__item--firefox {
-    color: orange;
-}        
-.browsers__item--opera {
-    color: red;
-}
-.browsers__item--safari {
-    color: steelblue;
-}
-.browsers__item--ie {
-    color: skyblue;
-}
+    font: 16px/1.4 Arial, sans-serif;
+    }   
+    .green {
+        color: #22a12a;
+        }
+    .red {
+        color: #c90000;
+        }
+    .gold {
+        color: #f9d411
+        }    
+    .browsers__item--chrome {
+        width: 126px;
+        height: 121px;
+        color: green;
+        }
+    .browsers__item--firefox {
+        width: 120px;
+        height: 124px;
+        color: #f2a414;
+        }        
+    .browsers__item--opera {
+        width: 108px;
+        height: 118px;
+        color: #c10e0e;
+        }
+    .browsers__item--safari {
+        width: 112px;
+        height: 125px;
+        color: #646464;
+        }
+    .browsers__item--ie {
+        float: right;
+        width: 126px;
+        height: 123px;
+        color: #036da3;
+        }
+
+/* Text
+---------------------------------------- */
+.section--text {
+    font-family: 'PT Sans', 'Trebuchet MS',sans-serif;
+    }
+    .section--columns__title {
+        width: calc(50% - 45px);
+        }
+    .text__columns {
+        vertical-align: top;
+        column-count: 2;
+        column-gap: 90px;
+        margin: 0;
+        width: 100%;
+        }

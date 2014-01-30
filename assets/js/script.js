@@ -97,6 +97,19 @@ for ( var i = 0; i < rating_radio_list.length; i++ ){
 // Browsers
 //----------------------------------------
 
+function coloring_chrome ( text ) {
+	var out = "";
+	var colors_classes = [ "green", "red", "gold" ];
+	var text_arr = text.split("");
+	
+	for ( var i = 0; i < colors_classes.length; i++ ) {
+		var letters = text_arr.splice(0, 2).join("");
+		out += "<span class='" + colors_classes[i] + "'>" + letters + "</span>"; 
+	}
+
+	return out;
+}
+
 var images = document.querySelectorAll(".browsers__item");
 
 for ( var i = 0; i < images.length; i++ ) {
@@ -108,7 +121,10 @@ for ( var i = 0; i < images.length; i++ ) {
 	if ( image.width == 0 && image.height == 0 ){
 		var image_class = image_elem.getAttribute("class");
 		var image_alt = image_elem.getAttribute("alt");
-		var replacer = document.createElement("span");
+		var replacer = document.createElement("div");
+		if ( image_alt == "Chrome" ) {
+			image_alt = coloring_chrome ( image_alt );
+			}
 		replacer.innerHTML = image_alt
 		replacer.setAttribute("class", image_class);
 

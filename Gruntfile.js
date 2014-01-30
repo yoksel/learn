@@ -24,8 +24,11 @@ module.exports = function (grunt) {
       img_res: [
         'assets/img'
       ],
-      js: [
+      js_src: [
         '_src/js/*.js'
+      ],
+      js_res: [
+        'assets/js/*.js'
       ]
     },
 
@@ -135,6 +138,12 @@ module.exports = function (grunt) {
           livereload: 35740,
         },
       },
+      js: {
+        files: '<%= project.js_res %>{,*/}*.{js}',
+        options: {
+          livereload: 35740,
+        },
+      },
     },
 
     connect: {
@@ -171,7 +180,7 @@ module.exports = function (grunt) {
    */
   grunt.registerTask('default', [
     'svgmin',
-    'imagemin',
+    // 'imagemin',
     'connect',
     'open',
     'watch'
