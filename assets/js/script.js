@@ -86,7 +86,7 @@ function setActiveClass( parent_elem, class_name ) {
 		if ( items[i].classList.contains(class_name) ){
 			return;
 		}
-		items[i].classList.add(class_name);
+		addClass( items[i], class_name );
 	}
 }
 
@@ -98,7 +98,7 @@ for ( var i = 0; i < rating_radio_list.length; i++ ){
   
 	item_radio.parentNode.onmouseover = function(){
 		resetClass( rating, item_active_class );
-		this.classList.add( item_hover_class );
+		addClass( this, item_hover_class );
 		setActiveClass( rating, item_hover_class );
 	}
 
@@ -116,7 +116,7 @@ for ( var i = 0; i < rating_radio_list.length; i++ ){
 		var parent = this.parentNode;
 
 		resetClass( rating, item_active_class );
-		parent.classList.add ( item_active_class );
+		addClass( parent, item_active_class );
 		setActiveClass( rating, item_active_class );
 	}
 }
