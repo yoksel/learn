@@ -146,7 +146,7 @@ for ( var i = 0; i < rating_radio_list.length; i++ ){
 		var checked = rating.querySelector(":checked");
 		resetClass( rating, item_hover_class );
 		if ( checked ){
-			checked.parentNode.classList.add( item_active_class );
+			addClass( checked.parentNode, item_active_class );
 			setActiveClass( rating, item_active_class );
 		}
 	}			
