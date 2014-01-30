@@ -76,7 +76,7 @@ A {
 
 .section {
   padding-bottom: 30px;
-  background: url(task.png) -27px 0 no-repeat;
+  /*background: url(task.png) -27px 0 no-repeat;*/
 }
 
 .section--intro {
