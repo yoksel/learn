@@ -3,7 +3,8 @@ console.log("Hello!");
 // Common
 //----------------------------------------
 
-function makeMap( list ) {
+function makeMap( class_name ) {
+	var list = class_name.split(" ");
 	var map = {};
 	for (var i = 0; i < list.length; i++) {
 		map[list[i]] = list[i];
@@ -11,19 +12,58 @@ function makeMap( list ) {
 	return map;
 }
 
-// because of classList.add doesn't work in ie9
+// because of classList.add doesn't work in ie9a and less
 function addClass( elem, class_name ) {
-	var elem_class = elem.className;
 
-	if ( !elem_class ){
+	if ( !elem.className ){
 		elem.className = class_name;
 		return;
 	}
-	var class_list = elem_class.split(" ");
-	var map = makeMap( class_list );
+
+	var map = makeMap( elem.className );
 	if ( !map[class_name] ){
 		elem.className += " " + class_name;
 	}
+}
+
+function removeClass( elem, class_name ) {
+	var new_class_name = "";
+	
+	if ( !elem.className ){
+		return;
+	}
+
+	var map = makeMap( elem.className );
+	var list = elem.className.split(" ");
+
+	if ( map[class_name] ){
+		var added_counter = 0;
+		for (var item in map ) {
+			if ( item != class_name ){
+				new_class_name += item;
+				if ( list.length > 2 && added_counter < list.length - 2 ){
+					new_class_name += " ";
+					}
+				added_counter++;
+			}	
+			
+		}
+	}
+	elem.className = new_class_name;
+	
+}
+
+function containsClass( elem, class_name ) {
+
+	if ( !elem.className ){
+		return false;
+	}
+
+	var map = makeMap( elem.className );
+	if ( map[class_name] ){
+		return true;
+	}
+	return false;
 }
 
 // Progress
@@ -76,14 +116,15 @@ var item_hover_class = "rating__item--hover";
 function resetClass( parent_elem, class_name ) {
 	var items = parent_elem.querySelectorAll("." + class_name);
 	for (var i = 0; i < items.length; i++) {
-		items[i].classList.remove(class_name);
+		
+		removeClass( items[i], class_name );
 	}
 }
 
 function setActiveClass( parent_elem, class_name ) {
 	var items = parent_elem.querySelectorAll("." + item_class);
 	for (var i = 0; i < items.length; i++) {
-		if ( items[i].classList.contains(class_name) ){
+		if ( containsClass( items[i], class_name ) ){
 			return;
 		}
 		addClass( items[i], class_name );
@@ -93,8 +134,7 @@ function setActiveClass( parent_elem, class_name ) {
 var rating_radio_list = rating.querySelectorAll(".rating__radio");
 
 for ( var i = 0; i < rating_radio_list.length; i++ ){
-  var item_radio = rating_radio_list[i];
-  
+	var item_radio = rating_radio_list[i];
   
 	item_radio.parentNode.onmouseover = function(){
 		resetClass( rating, item_active_class );
@@ -104,7 +144,6 @@ for ( var i = 0; i < rating_radio_list.length; i++ ){
 
 	item_radio.parentNode.onmouseout = function(){
 		var checked = rating.querySelector(":checked");
-		// console.log(checked);
 		resetClass( rating, item_hover_class );
 		if ( checked ){
 			checked.parentNode.classList.add( item_active_class );
