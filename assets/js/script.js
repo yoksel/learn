@@ -12,7 +12,7 @@ function makeMap( class_name ) {
 	return map;
 }
 
-// because of classList.add doesn't work in ie9a and less
+// because classList.add doesn't work in ie9a and older
 function addClass( elem, class_name ) {
 
 	if ( !elem.className ){
@@ -165,7 +165,7 @@ for ( var i = 0; i < rating_radio_list.length; i++ ){
 
 function coloring_chrome ( text ) {
 	var out = "";
-	var colors_classes = [ "green", "red", "gold" ];
+	var colors_classes = [ "text--green", "text--red", "text--gold" ];
 	var text_arr = text.split("");
 	
 	for ( var i = 0; i < colors_classes.length; i++ ) {

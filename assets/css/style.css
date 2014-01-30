@@ -203,15 +203,15 @@ A {
   font: 16px/1.4 Arial, sans-serif;
 }
 
-.green {
+.text--green {
   color: #22a12a;
 }
 
-.red {
+.text--red {
   color: #c90000;
 }
 
-.gold {
+.text--gold {
   color: #f9d411;
 }
 
