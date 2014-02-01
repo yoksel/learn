@@ -104,25 +104,35 @@ module.exports = function (grunt) {
         '_src/css/style.unprefixed.css'
       ]
     },
-    svgmin: {                        // Task
-        options: {                    // Configuration that will be passed directly to SVGO
+    svgmin: {                        
+        options: {                   
             plugins: [{
                 removeViewBox: false
             }]
         },
-        dist: {                                            // Target
-            files: {                                    // Dictionary of files
-                '_src/img/star2.svg': '_src/img/star.svg'        // 'destination': 'source'
-            }
+        // dist: {                      
+        //     files: {                 
+        //         '_src/img/star2.svg': '_src/img/star.svg'        // 'destination': 'source'
+        //     }
+        // }
+        dist: {                        // Target
+            files: [{                // Dictionary of files
+                expand: true,        // Enable dynamic expansion.
+                cwd: '_src/img',        // Src matches are relative to this path.
+                src: ['**/*.svg'],    // Actual pattern(s) to match.
+                dest: 'assets/img',        // Destination path prefix.
+                ext: '.svg'        // Dest filepaths will have this extension.
+                // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
+            }]
         }
     },  
-    imagemin: {                          // Task
-      dynamic: {                         // Another target
+    imagemin: {
+      dynamic: {   
         files: [{
-          expand: true,                  // Enable dynamic expansion
-          cwd: '_src/img',                   // Src matches are relative to this path
-          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-          dest: 'assets/img'                  // Destination path prefix
+          expand: true,
+          cwd: '_src/img',                   
+          src: ['**/*.{png,jpg,gif}'],   
+          dest: 'assets/img'             
         }]
       }
     },  

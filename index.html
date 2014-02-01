@@ -9,29 +9,98 @@
     <body>
         <div class="wrapper">
             <section class="section section--intro hide">
-                Тут какой-то умный текст
+                <p>В индустрии сейчас происходит много интересного. Появляются новые инструменты и методики, на смену старым браузерам-монополистам приходит целый зоопарк новых браузеров и устройств, а для более лучшей разработки создаются и внедряются новые спецификации. Некоторые не так быстро как хотелось бы, но мы уже имеем достаточно новых удобных инструментов, хотя некоторые браузеры не спешат их поддерживать. При таком бурном развитии веб-разработки можно каждый день учиться чему-то новому.</p>
             </section>
             <section class="section section--rating _hide">
-                <ul class="rating">
+                <ul class="rating rating--16 rating--stars">
                   <li class="rating__item">
-                    <input type="radio" id="rate-1"  name="rating__radio" class="rating__radio">
+                    <input type="radio" id="rate-1"  name="rating__radio" class="rating__radio rating__radio--1">
                     <label for="rate-1" class="rating__label"></label>
                   </li>
                   <li class="rating__item">
-                    <input type="radio" id="rate-2" name="rating__radio" class="rating__radio">
+                    <input type="radio" id="rate-2" name="rating__radio" class="rating__radio rating__radio--2">
                     <label for="rate-2" class="rating__label"></label>
                   </li>
                   <li class="rating__item">
-                    <input type="radio" id="rate-3" name="rating__radio" class="rating__radio">
+                    <input type="radio" id="rate-3" name="rating__radio" class="rating__radio rating__radio--3">
                     <label for="rate-3" class="rating__label"></label>
                   </li>
                   <li class="rating__item">
-                    <input type="radio" id="rate-4" name="rating__radio" class="rating__radio">
+                    <input type="radio" id="rate-4" name="rating__radio" class="rating__radio rating__radio--4">
                     <label for="rate-4" class="rating__label"></label>
                   </li>
                   <li class="rating__item">
                     <input type="radio" id="rate-5" name="rating__radio" class="rating__radio">
                     <label for="rate-5" class="rating__label"></label>
+                  </li>
+                </ul>
+
+                 <ul class="rating rating--16 rating--svg rating--hearts">
+                  <li class="rating__item">
+                    <input type="radio" id="rate-6"  name="rating__radio-2" class="rating__radio rating__radio--1">
+                    <label for="rate-6" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-7" name="rating__radio-2" class="rating__radio rating__radio--2">
+                    <label for="rate-7" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-8" name="rating__radio-2" class="rating__radio rating__radio--3">
+                    <label for="rate-8" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-9" name="rating__radio-2" class="rating__radio rating__radio--4">
+                    <label for="rate-9" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-10" name="rating__radio-2" class="rating__radio rating__radio--5">
+                    <label for="rate-10" class="rating__label"></label>
+                  </li> 
+                </ul>
+
+                <ul class="rating rating--32 rating--svg rating--hearts">
+                  <li class="rating__item">
+                    <input type="radio" id="rate-11"  name="rating__radio-3" class="rating__radio rating__radio--1">
+                    <label for="rate-11" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-12" name="rating__radio-3" class="rating__radio rating__radio--2">
+                    <label for="rate-12" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-13" name="rating__radio-3" class="rating__radio rating__radio--3">
+                    <label for="rate-13" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-14" name="rating__radio-3" class="rating__radio rating__radio--4">
+                    <label for="rate-14" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-15" name="rating__radio-3" class="rating__radio rating__radio--5">
+                    <label for="rate-15" class="rating__label"></label>
+                  </li>
+                </ul>
+
+                <ul class="rating rating--32 rating--svg rating--smiles">
+                  <li class="rating__item">
+                    <input type="radio" id="rate-16"  name="rating__radio-3" class="rating__radio rating__radio--1">
+                    <label for="rate-16" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-17" name="rating__radio-3" class="rating__radio rating__radio--2">
+                    <label for="rate-17" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-18" name="rating__radio-3" class="rating__radio rating__radio--3">
+                    <label for="rate-18" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-19" name="rating__radio-3" class="rating__radio rating__radio--4">
+                    <label for="rate-19" class="rating__label"></label>
+                  </li>
+                  <li class="rating__item">
+                    <input type="radio" id="rate-20" name="rating__radio-3" class="rating__radio rating__radio--5">
+                    <label for="rate-20" class="rating__label"></label>
                   </li>
                 </ul>
             </section>    
@@ -43,35 +112,45 @@
             </section> 
 
             <section class="section section--button hide">
-                <input type="button" value="Кнопка"  class="button"/>
+                <button class="button">Кнопка</button>
+                <button class="button">Кнопачка button</button>
+                <input type="button" value="Кнопка input"  class="button"/>
+                
+                <span class="decore--circles"><input type="button" value="Я кнопка на все случаи жизни"  class="button"/></span>
+                <span class="decore--bg"><input type="button" value="А я кнопка на цветном фоне"  class="button"/></span>
             </section>
 
-            <section class="section section--browsers hide">
-                <img src="assets/img/chrome.png" alt="Chrome" class="browsers__item browsers__item--chrome">
-                <img src="assets/img/ff.png" alt="Firefox" class="browsers__item browsers__item--firefox">
-                <img src="assets/img/opera.png" alt="Opera" class="browsers__item browsers__item--opera">
-                <img src="assets/img/safari.png" alt="Safari" class="browsers__item browsers__item--safari">
-                <img src="assets/img/ie.png" alt="Internet
-                Explorer" class="browsers__item browsers__item--ie">
+            <section class="section section--browsers _hide">
+                <ul class="list--browsers">
+                  <li  class="browsers__item browsers__item--chrome"><img src="assets/img/chrome.png" alt="Chrome" class="browsers__img img--chrome"></li>
+                  <li  class="browsers__item browsers__item--firefox"><img src="assets/img/ff.png" alt="Firefox" class="browsers__img img--firefox"></li>
+                  <li  class="browsers__item browsers__item--opera"><img src="assets/img/opera.png" alt="Opera" class="browsers__img img--opera"></li>
+                  <li  class="browsers__item browsers__item--safari"><img src="assets/img/safari.png" alt="Safari" class="browsers__img img--safari"></li>
+                  <li  class="browsers__item browsers__item--ie"><img src="assets/img/ie.png" alt="Internet Explorer" class="browsers__img img--ie"></li>
+                </ul>
             </section>
 
             <section class="section section--text section--columns hide">
                 <h1 class="section--columns__title">Тема: «Сюжетный анапест: основные моменты»</h1>
-                <div class="text text__columns">
-                    <p> истинной хронологической последовательности событий, потому что мелькание мыслей параллельно. Структура аллитерирует мелодический реформаторский пафос, однако дальнейшее развитие приемов декодирования мы находим в работах академика В.Виноградова. Аллюзия наблюдаема. Аллитерация, как бы это ни казалось парадоксальным, параллельна. Мифопорождающее текстовое устройство прочно вызывает эпитет, причём сам Тредиаковский свои стихи мыслил как “стихотворное дополнение” к книге Тальмана.</p>
+                <div class="text columns">
+                    <div class="columns__item columns__item--left">
+                      <p> Нельзя восстановить истинной хронологической последовательности событий, потому что мелькание мыслей параллельно. Структура аллитерирует мелодический реформаторский пафос, однако дальнейшее развитие приемов декодирования мы находим в работах академика В.Виноградова. Аллюзия наблюдаема. Аллитерация, как бы это ни казалось парадоксальным, параллельна. Мифопорождающее текстовое устройство прочно вызывает эпитет, причём сам Тредиаковский свои стихи мыслил как “стихотворное дополнение” к книге Тальмана.</p>
+                    
+                      <p>Речевой акт традиционно осознаёт музыкальный дольник, но не рифмами. Различное расположение просветляет мелодический образ, таким образом постепенно смыкается с сюжетом. Силлабо-тоника, в первом приближении, просветляет мелодический ямб, таким образом в некоторых случаях образуются рефрены, кольцевые композиции, анафоры.</p>
+                    </div>
 
-                    <p>Речевой акт традиционно осознаёт музыкальный дольник, но не рифмами. Различное расположение просветляет мелодический образ, таким образом постепенно смыкается с сюжетом. Силлабо-тоника, в первом приближении, просветляет мелодический ямб, таким образом в некоторых случаях образуются рефрены, кольцевые композиции, анафоры.</p>
-
-                    <p>Представленный лексико-семантический анализ является психолингвистическим в своей основе, но мифопорождающее текстовое устройство аллитерирует мифологический генезис свободного стиха, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</p>
-
-                    <p>Драма, по определению отражает брахикаталектический стих, хотя в существование или актуальность этого он не верит, а моделирует собственную реальность. Лексика осознаёт литературный палимпсест, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</p>
-
-                    <ul class="list list--ul">
-                        <li class="item list--ul__item">Курит ли трупка мой</li>
-                        <li class="item list--ul__item"><a href="#">из трупка тфой пихтишь</a></li>
-                        <li class="item list--ul__item"><span class="pseudo-link">Или мой кафе пил</span></li>
-                        <li class="item list--ul__item">тфой в щашешка сидишь</li>
-                    </ul>
+                    <div class="columns__item columns__item--right">
+                      <p>Представленный лексико-семантический анализ является психолингвистическим в своей основе, но мифопорождающее текстовое устройство аллитерирует мифологический генезис свободного стиха, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</p>
+                    
+                      <p>Драма, по определению отражает брахикаталектический стих, хотя в существование или актуальность этого он не верит, а моделирует собственную реальность. Лексика осознаёт литературный палимпсест, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</p>
+  
+                      <ul class="list list--dash">
+                          <li class="list--dash__item">Курит ли трупка мой</li>
+                          <li class="list--dash__item"><a href="#">из трупка тфой пихтишь</a></li>
+                          <li class="list--dash__item"><span class="pseudo-link">Или мой кафе пил</span></li>
+                          <li class="list--dash__item">тфой в щашешка сидишь</li>
+                      </ul>
+                    </div>
                 </div>
             </section> 
 
