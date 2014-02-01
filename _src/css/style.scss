@@ -2,6 +2,7 @@ $progress-width: 210px;
 $progress-height: 14px;
 $circle-color: yellowgreen;
 $size-16: 16px;
+$offset: 40px;
 
 @mixin clear {
     content: "";
@@ -20,7 +21,7 @@ H1, H2, H3, H4 {
     font-weight: normal;
     } 
 H1 {
-    margin-bottom: 18px;
+    margin-bottom: $offset / 2;
     font-size: 24px;
     line-height: 1;
     }  
@@ -71,7 +72,7 @@ A {
     min-width: 700px;
     max-width: 1000px;
     margin: 50px auto;
-    padding: 30px;
+    padding: $offset;
     box-sizing: border-box;
     background: white;
     border: 1px solid #DDD;
@@ -79,7 +80,7 @@ A {
     }    
     .section {
         position: relative;
-        margin-bottom: 30px;
+        margin-bottom: $offset;
         /*padding-bottom: 30px;*/
         /*background: url(/task.png) -27px 0 repeat;*/
         /*border: 1px solid silver;*/
@@ -142,13 +143,13 @@ A {
                 }
 
             .rating--stars .rating__label {
-                background-image: url(/assets/img/stars.png);    
+                background-image: url(/../assets/img/stars.png);    
                 }
             .rating--hearts .rating__label {
-                background-image: url(/assets/img/hearts.svg);    
+                background-image: url(/../assets/img/hearts.svg);    
                 } 
             .rating--smiles .rating__label {
-                background-image: url(/assets/img/faces.svg);    
+                background-image: url(/../assets/img/faces.svg);    
                 } 
         .rating--16  .rating__item {
             width: $size-16;
