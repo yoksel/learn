@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="484px" height="366px" viewBox="0 0 484 366" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>shadow</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs>
+        <filter x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="10.15625" in="SourceGraphic" result="blur"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M183.28906,38.4570313 C94.3437478,19.8906255 40,34 40,34 C40,34 24.7117011,79.1340699 29.0820313,121.402344 C38.5039063,212.527344 40,311 40,311 C40,311 262.660168,346.593759 337.925794,334.69142 C413.191419,322.789076 448,311 448,311 C448,311 470.347652,248.121094 459.039048,196.277344 C447.730439,144.433594 447.999985,34 447.999985,34 C447.999985,34 272.234373,57.023437 183.28906,38.4570313 Z" id="Rectangle-1" fill="#D0CDCD" filter="url(#filter-1)" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>
