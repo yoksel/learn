@@ -157,6 +157,10 @@ A {
             width: $size-16;
             height: $size-16;
             }
+        .rating--24  .rating__item {
+            width: $size-16 * 1.5;
+            height: $size-16 * 1.5;
+            }    
         .rating--32  .rating__item {
             width: $size-16 * 2;
             height: $size-16 * 2;

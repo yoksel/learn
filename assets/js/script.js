@@ -147,28 +147,24 @@ for (var i = 0; i < ratings.length; i++) {
 
 function rating_handler ( rating ){
 	var rating_radio_list = rating.querySelectorAll(".rating__radio");
-	var init_checked_pos = 3;
-	var items = rating.querySelectorAll(".rating__label");
-	var init_checked = items[2];
+	var init_checked_pos = 2;
+	var labels_items = rating.querySelectorAll(".rating__label");
+	var init_checked_item = labels_items[init_checked_pos];
+	var init_checked_radio = rating_radio_list[init_checked_pos];
 	
 	for ( var i = 0; i < rating_radio_list.length; i++ ){
 		var item_radio = rating_radio_list[i];
 	  
 		item_radio.parentNode.onmouseover = function(){
-			console.log("over");
 			resetClass( rating, item_active_class );
 			addClass( this, item_hover_class );
 			setActiveClass( rating, item_hover_class );
 		}
 
 		item_radio.parentNode.onmouseout = function(){
-			console.log("out");
 			var checked = rating.querySelector(":checked");
-
-			console.log( checked );
 			resetClass( rating, item_hover_class );
 			if ( checked ){
-				console.log( "checked = true" );
 				addClass( checked.parentNode, item_active_class );
 				setActiveClass( rating, item_active_class );
 			}
@@ -184,7 +180,8 @@ function rating_handler ( rating ){
 	}
 
 	// inititial state
-	addClass( init_checked.parentNode, item_active_class );
+	init_checked_radio.checked = true; 
+	addClass( init_checked_item.parentNode, item_active_class );
 	setActiveClass( rating, item_active_class );
 }
 
@@ -219,6 +216,15 @@ function coloring_chrome ( text ) {
 	return out;
 }
 
+function break_ie ( text ) {
+	var out = "";
+	var text_arr = text.split(" ");
+
+	out = text_arr[0] + "<br/>" + text_arr[1];
+
+	return out;
+}
+
 var images = document.querySelectorAll(".browsers__img");
 
 for ( var i = 0; i < images.length; i++ ) {
@@ -233,6 +239,9 @@ for ( var i = 0; i < images.length; i++ ) {
 		if ( image_alt == "Chrome" ) {
 			image_alt = coloring_chrome ( image_alt );
 			}
+		if ( image_alt == "Internet Explorer" ) {
+			image_alt = break_ie ( image_alt );
+			}	
 		placeholder.innerHTML = image_alt
 		placeholder.setAttribute("class", "placeholder");
 
