@@ -18,7 +18,7 @@ ol, ul {
 }
 
 BODY {
-  background: ivory;
+  background: white;
   font: 16px/1.4 Verdana, sans-serif;
 }
 
@@ -99,7 +99,12 @@ A:hover {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   background: white;
-  border: 1px solid #DDD;
+  border: 20px solid transparent;
+  -webkit-border-image: url(../img/shadow.svg) 8% 7% 13%;
+  -o-border-image: url(../img/shadow.svg) 8% 7% 13%;
+  border-image: url(../img/shadow.svg) 8% 7% 13%;
+  -webkit-box-shadow: 0 0 0 1px whitesmoke inset;
+  box-shadow: 0 0 0 1px whitesmoke inset;
   /*opacity: .4;*/
 }
 
@@ -180,15 +185,15 @@ A:hover {
 }
 
 .rating--stars .rating__label {
-  background-image: url(.././assets/img/stars.png);
+  background-image: url(../img/stars.png);
 }
 
 .rating--hearts .rating__label {
-  background-image: url(.././assets/img/hearts.svg);
+  background-image: url(../img/hearts.svg);
 }
 
 .rating--smiles .rating__label {
-  background-image: url(.././assets/img/faces.svg);
+  background-image: url(../img/faces.svg);
 }
 
 .rating--16 .rating__item {
