@@ -201,6 +201,11 @@ A:hover {
   height: 16px;
 }
 
+.rating--24 .rating__item {
+  width: 24px;
+  height: 24px;
+}
+
 .rating--32 .rating__item {
   width: 32px;
   height: 32px;
