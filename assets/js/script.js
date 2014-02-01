@@ -197,21 +197,6 @@ function rating_handler ( rating ){
 	setActiveClass( rating, item_active_class );
 }
 
-
-
-// Button
-//----------------------------------------
-
-var buttons = document.querySelectorAll(".button");
-var button_pressed_class = "button--pressed";
-
-for (var i = 0; i < buttons.length; i++) {
-	
-	buttons[i].onclick = function () {
-		toggleClass ( this, button_pressed_class );
-	}
-}
-
 // Browsers
 //----------------------------------------
 
