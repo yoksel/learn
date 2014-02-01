@@ -1,11 +1,10 @@
-console.log("Hello!");
-
 // Common
 //----------------------------------------
 
 function makeMap( class_name ) {
 	var list = class_name.split(" ");
 	var map = {};
+
 	for (var i = 0; i < list.length; i++) {
 		map[list[i]] = list[i];
 	}
@@ -66,6 +65,16 @@ function containsClass( elem, class_name ) {
 	return false;
 }
 
+function toggleClass( elem, class_name ){
+	
+	if ( containsClass ( elem, class_name )){
+		removeClass( elem, class_name );
+		}
+	else {
+		addClass( elem, class_name );	
+	}
+}
+
 // Progress
 //----------------------------------------
 
@@ -100,7 +109,7 @@ function showProgress() {
 	progress_state.style.width = percents;
 
 	for ( var i = 0; i < percents_boxes_list.length; i++ ){
-		percents_boxes_list[i].innerText = percents;
+		percents_boxes_list[i].innerHTML = percents;
 	}
 
 }
@@ -108,7 +117,7 @@ function showProgress() {
 // Rating
 //----------------------------------------
 
-var rating = document.querySelector(".rating");
+var ratings = document.querySelectorAll(".rating");
 var item_class = "rating__item";
 var item_active_class = "rating__item--active";
 var item_hover_class = "rating__item--hover";
@@ -131,32 +140,66 @@ function setActiveClass( parent_elem, class_name ) {
 	}
 }
 
-var rating_radio_list = rating.querySelectorAll(".rating__radio");
+for (var i = 0; i < ratings.length; i++) {
+	var rating_item = ratings[i];
+	rating_handler ( rating_item );
+};
 
-for ( var i = 0; i < rating_radio_list.length; i++ ){
-	var item_radio = rating_radio_list[i];
-  
-	item_radio.parentNode.onmouseover = function(){
-		resetClass( rating, item_active_class );
-		addClass( this, item_hover_class );
-		setActiveClass( rating, item_hover_class );
-	}
+function rating_handler ( rating ){
+	var rating_radio_list = rating.querySelectorAll(".rating__radio");
+	var init_checked_pos = 3;
+	var items = rating.querySelectorAll(".rating__label");
+	var init_checked = items[2];
+	
+	for ( var i = 0; i < rating_radio_list.length; i++ ){
+		var item_radio = rating_radio_list[i];
+	  
+		item_radio.parentNode.onmouseover = function(){
+			console.log("over");
+			resetClass( rating, item_active_class );
+			addClass( this, item_hover_class );
+			setActiveClass( rating, item_hover_class );
+		}
 
-	item_radio.parentNode.onmouseout = function(){
-		var checked = rating.querySelector(":checked");
-		resetClass( rating, item_hover_class );
-		if ( checked ){
-			addClass( checked.parentNode, item_active_class );
+		item_radio.parentNode.onmouseout = function(){
+			console.log("out");
+			var checked = rating.querySelector(":checked");
+
+			console.log( checked );
+			resetClass( rating, item_hover_class );
+			if ( checked ){
+				console.log( "checked = true" );
+				addClass( checked.parentNode, item_active_class );
+				setActiveClass( rating, item_active_class );
+			}
+		}			
+
+		item_radio.onclick = function(){
+			var parent = this.parentNode;
+
+			resetClass( rating, item_active_class );
+			addClass( parent, item_active_class );
 			setActiveClass( rating, item_active_class );
 		}
-	}			
+	}
 
-	item_radio.onclick = function(){
-		var parent = this.parentNode;
+	// inititial state
+	addClass( init_checked.parentNode, item_active_class );
+	setActiveClass( rating, item_active_class );
+}
 
-		resetClass( rating, item_active_class );
-		addClass( parent, item_active_class );
-		setActiveClass( rating, item_active_class );
+
+
+// Button
+//----------------------------------------
+
+var buttons = document.querySelectorAll(".button");
+var button_pressed_class = "button--pressed";
+
+for (var i = 0; i < buttons.length; i++) {
+	
+	buttons[i].onclick = function () {
+		toggleClass ( this, button_pressed_class );
 	}
 }
 
@@ -176,7 +219,7 @@ function coloring_chrome ( text ) {
 	return out;
 }
 
-var images = document.querySelectorAll(".browsers__item");
+var images = document.querySelectorAll(".browsers__img");
 
 for ( var i = 0; i < images.length; i++ ) {
 	var image_elem = images[i];
@@ -185,16 +228,15 @@ for ( var i = 0; i < images.length; i++ ) {
 	image.src = image_url;
 	
 	if ( image.width == 0 && image.height == 0 ){
-		var image_class = image_elem.getAttribute("class");
 		var image_alt = image_elem.getAttribute("alt");
-		var replacer = document.createElement("div");
+		var placeholder = document.createElement("div");
 		if ( image_alt == "Chrome" ) {
 			image_alt = coloring_chrome ( image_alt );
 			}
-		replacer.innerHTML = image_alt
-		replacer.setAttribute("class", image_class);
+		placeholder.innerHTML = image_alt
+		placeholder.setAttribute("class", "placeholder");
 
-		image_elem.parentNode.replaceChild(replacer, image_elem);
+		image_elem.parentNode.replaceChild(placeholder, image_elem);
 	}
 }
 
