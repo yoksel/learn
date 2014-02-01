@@ -78,7 +78,7 @@ function toggleClass( elem, class_name ){
 // Progress
 //----------------------------------------
 
-var interval = setInterval(showProgress,50);	
+var interval = setInterval(showProgress, 100);	
 
 var progress_min = 0;
 var progress_max = 100;
@@ -96,15 +96,27 @@ var percents_box_state = percents_box.cloneNode();
 progress_elem.insertBefore(percents_box, null);
 progress_state.insertBefore(percents_box_state, null);
 
+var direct_forward = true; 
+
 var percents_boxes_list = progress_elem.querySelectorAll("." + percents_box_class);
 
 function showProgress() {
-	if ( progress_steps < progress_max ) {
-		progress_steps++;
+	if ( direct_forward == true ) {
+		if ( progress_steps < progress_max ) {
+				progress_steps++;
 		}
+		else {
+			direct_forward = false;
+		}
+	}	
 	else {
-		progress_steps = 0;
-		}	
+		if ( progress_steps > 0 ) {
+				progress_steps--;
+		}
+		else {
+			direct_forward = true;
+		}
+	}	
 	var percents = progress_steps + "%"
 	progress_state.style.width = percents;
 
