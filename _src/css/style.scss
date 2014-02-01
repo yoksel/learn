@@ -143,13 +143,13 @@ A {
                 }
 
             .rating--stars .rating__label {
-                background-image: url(/../assets/img/stars.png);    
+                background-image: url(.././assets/img/stars.png);    
                 }
             .rating--hearts .rating__label {
-                background-image: url(/../assets/img/hearts.svg);    
+                background-image: url(.././assets/img/hearts.svg);    
                 } 
             .rating--smiles .rating__label {
-                background-image: url(/../assets/img/faces.svg);    
+                background-image: url(.././assets/img/faces.svg);    
                 } 
         .rating--16  .rating__item {
             width: $size-16;
