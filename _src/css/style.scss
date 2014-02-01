@@ -1,6 +1,7 @@
 $progress-width: 210px;
 $progress-height: 14px;
-$circle-color: yellowgreen;
+$circle-color: lightblue;
+$circle-color-2: teal;
 $size-16: 16px;
 $offset: 40px;
 
@@ -69,14 +70,14 @@ A {
 /* Layout
 ---------------------------------------- */
 .wrapper {
-    min-width: 700px;
+    min-width: 760px;
     max-width: 1000px;
     margin: 50px auto;
     padding: $offset;
     box-sizing: border-box;
     background: white;
     border: 20px solid transparent;
-    border-image: url(../img/shadow.svg) 8% 7% 13%;
+    border-image: url(http://img-fotki.yandex.ru/get/9555/5091629.9a/0_7ec51_1cf902d3_L.png) 8% 5% 13% 7%;
     box-shadow: 0 0 0 1px whitesmoke inset;
     /*opacity: .4;*/
     }    
@@ -113,11 +114,13 @@ A {
 /* Rating
 ---------------------------------------- */
 .rating {
-    margin-bottom: 5px;
+    display: inline-block;
+    margin-right: $offset;
     padding: 0;
-    &:after {
+    vertical-align: middle;
+    /*&:after {
         @include clear;
-        }
+        }*/
     }
     .rating__item {
         display: block;
