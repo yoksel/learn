@@ -19,8 +19,7 @@ ol, ul {
 
 BODY {
   background: white;
-  font: 16px/1.4 Verdana, sans-serif;
-  font: 16px/1.4 'PT Sans', 'Trebuchet MS', sans-serif;
+  font: 11.42857px "PT Sans", "Trebuchet MS", sans-serif;
 }
 
 H1, H2, H3, H4 {
@@ -158,7 +157,6 @@ A:hover {
   position: relative;
   margin-bottom: 40px;
   /*background: url(/task.png) -27px 0 repeat;*/
-  /*border: 1px solid silver;*/
 }
 .section:after {
   content: "";
@@ -325,7 +323,7 @@ A:hover {
 .button:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
-  background: #fdffcc;
+  background: #FDFFCC;
   background: -webkit-gradient(linear, left top, left bottom, from(#feffeb), to(#fdffcc));
   background: -webkit-linear-gradient(#feffeb 30%, #fdffcc 70%);
   background: linear-gradient(#feffeb 30%, #fdffcc 70%);
@@ -374,15 +372,15 @@ A:hover {
 }
 
 .text--green {
-  color: #22a12a;
+  color: #22A12A;
 }
 
 .text--red {
-  color: #c90000;
+  color: #C90000;
 }
 
 .text--gold {
-  color: #f9d411;
+  color: #F9D411;
 }
 
 .browsers__item--chrome {
@@ -395,7 +393,7 @@ A:hover {
 }
 
 .browsers__item--firefox {
-  color: #f2a414;
+  color: #F2A414;
 }
 
 .img--firefox {
@@ -404,7 +402,7 @@ A:hover {
 }
 
 .browsers__item--opera {
-  color: #c10e0e;
+  color: #C10E0E;
 }
 
 .img--opera {
@@ -424,7 +422,7 @@ A:hover {
 
 .browsers__item--ie {
   float: right;
-  color: #036da3;
+  color: #036DA3;
 }
 
 .img--ie {
