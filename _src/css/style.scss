@@ -52,9 +52,6 @@ A {
     color: #353434;
     cursor: pointer;
     }
-.hide {
-    /*display: none;*/
-    } 
 .list--dash__item:before {
     content: "\2014";
     position: relative;
@@ -71,7 +68,13 @@ A {
     outline: 0;
     box-shadow: inset 0 1px 1px #DDD;
     font: 11px/1.4 Verdana, sans-serif;
-    }        
+    }   
+.hint {
+    font-size: 13px;
+    font-style: italic;
+    color: #AAA;
+}   
+      
 /* Decor
 ---------------------------------------- */
 .decor--bg {
@@ -166,34 +169,14 @@ A {
     border: 20px solid transparent;
     border-image: url(http://img-fotki.yandex.ru/get/9555/5091629.9a/0_7ec51_1cf902d3_L.png) 8% 5% 13% 7%;
     box-shadow: 0 0 0 1px whitesmoke inset;
-    /*opacity: .4;*/
     }    
     .section {
         position: relative;
         margin-bottom: $offset;
-        /*background: url(/task.png) -27px 0 repeat;*/
         &:after {
             @include clear;
             }
         }
-    .section--intro {
-        background: none;
-        }
-    .section--rating {
-        background-position: -27px -36px;    
-        } 
-    .section--progress {
-        background-position: -28px -75px;    
-        } 
-    .section--button {
-        background-position: -27px -105px;    
-        }      
-    .section--browsers {
-        background-position: -20px -212px;  
-        }  
-    .section--text {
-        
-        }  
                       
 /* Rating
 ---------------------------------------- */
@@ -324,7 +307,10 @@ A {
             } 
         }
     }
-    
+.section--button DIV:first-child {
+    margin-bottom: $offset * .75;
+    }
+
 /* Browsers
 ---------------------------------------- */
 .browsers__item {
