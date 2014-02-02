@@ -38,7 +38,10 @@ H2 {
 P {
     margin-bottom: 1em;
     text-indent: 1em;
-    }   
+    }  
+    .section--button P {
+       text-indent: 0; 
+        } 
 A {
     color: #0070ed;
     &:hover {
