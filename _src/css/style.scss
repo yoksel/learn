@@ -1,14 +1,7 @@
 $progress-width: 210px;
 $progress-height: 14px;
-/*$circle-color: lightblue;*/
-$circle-color: hsl(350, 100%, 80%);
-$circle-color-2: teal;
 $size-16: 16px;
 $offset: 40px;
-
-$red: hsl(0, 100%, 50%);
-$orange: hsl(30, 100%, 50%);
-$yellow: hsl(30, 100%, 50%);
 
 $color-1: #405952;
 $color-2: #9C9B7A;
@@ -29,6 +22,7 @@ $color-5: #F54F29;
 BODY {
     background: white;
     font: 16px/1.4 Verdana, sans-serif;
+    font: 16px/1.4 'PT Sans', 'Trebuchet MS', sans-serif;;
     }
 H1, H2, H3, H4 {
     font-weight: normal;
@@ -44,7 +38,10 @@ H2 {
 P {
     margin-bottom: 1em;
     text-indent: 1em;
-    }   
+    }  
+    .section--button P {
+       text-indent: 0; 
+        } 
 A {
     color: #0070ed;
     &:hover {
@@ -64,21 +61,17 @@ A {
     position: relative;
     margin: 0 .5em 0 -1.5em;
     color: #858585;
-    }   
-.columns:after {
-    @include clear;
-    }
-.columns__item {
-    float: left;
-    width: 50%;
-    box-sizing: border-box;
-    }
-    .columns__item--left {
-        padding-right: 45px;
-        }
-    .columns__item--right {
-        padding-left: 45px;
-        }  
+    }    
+.textfield {
+    height: 22px;
+    padding: 0 17px;
+    vertical-align: middle;
+    border-radius: 8px;
+    border: 1px solid #CCC;
+    outline: 0;
+    box-shadow: inset 0 1px 1px #DDD;
+    font: 11px/1.4 Verdana, sans-serif;
+    }        
 /* Decor
 ---------------------------------------- */
 .decor--bg {
@@ -131,8 +124,7 @@ A {
                     0 0 0 110px $color-2,
                     0 0 0 120px $color-3,
                     0 0 0 130px $color-4,
-                    0 0 0 140px $color-5
-                    ;
+                    0 0 0 140px $color-5;
         animation: 3s circles infinite linear; 
     }
 }    
@@ -158,8 +150,7 @@ A {
                     0 0 0 160px $color-2,
                     0 0 0 170px $color-3,
                     0 0 0 180px $color-4,
-                    0 0 0 190px $color-5
-                    ;
+                    0 0 0 190px $color-5;
     }
 } 
 
@@ -263,7 +254,7 @@ A {
             height: $size-16 * 2;
             }  
         .rating--svg .rating__label {
-            background-size: 100%;
+            background-size: 99%;
             }
 
 /* Progress
@@ -275,7 +266,7 @@ A {
     overflow: hidden;
     box-shadow: inset 0 1px 1px 1px rgba(200,200,200,.9);
     border-radius: 6px;
-    font-size: 9px;
+    font: 9px/1.4 Verdana, sans-serif;
     color: #000;
     }
     .progress__state {
@@ -303,7 +294,8 @@ A {
 ---------------------------------------- */
 .button {
     position: relative;
-    padding: 1px 17px;
+    height: 22px;
+    padding: 0 17px;
     background: #E2E2E2;
     background: linear-gradient(#f2f2f2 30%, #e2e2e2 70%);
     border: 1px solid #CCC;
@@ -406,13 +398,25 @@ A {
             height: 123px;
             margin-top: 5px;    
             }
+
 /* Text
 ---------------------------------------- */
-.section--text {
-    font-family: 'PT Sans', 'Trebuchet MS',sans-serif;
+.columns__title {
+    width: 50%;
+    padding-right: 45px;
+    box-sizing: border-box;
     }
-    .section--columns__title {
-        width: 50%;
-        padding-right: 45px;
-        box-sizing: border-box;
+    .columns:after {
+        @include clear;
         }
+.columns__item {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    }
+    .columns__item--left {
+        padding-right: 45px;
+        }
+    .columns__item--right {
+        padding-left: 45px;
+        } 
