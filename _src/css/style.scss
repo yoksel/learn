@@ -1,9 +1,21 @@
 $progress-width: 210px;
 $progress-height: 14px;
-$circle-color: lightblue;
+/*$circle-color: lightblue;*/
+$circle-color: hsl(350, 100%, 80%);
 $circle-color-2: teal;
 $size-16: 16px;
 $offset: 40px;
+
+$red: hsl(0, 100%, 50%);
+$orange: hsl(30, 100%, 50%);
+$yellow: hsl(30, 100%, 50%);
+
+$color-1: #405952;
+$color-2: #9C9B7A;
+$color-3: #FFD393;
+$color-4: #FF974F;
+$color-5: #F54F29;
+
 
 @mixin clear {
     content: "";
@@ -66,7 +78,91 @@ A {
         }
     .columns__item--right {
         padding-left: 45px;
-        }    
+        }  
+/* Decor
+---------------------------------------- */
+.decor--bg {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: $color-3;
+    background: linear-gradient( 90deg, 
+        $color-1 10px, $color-2 11px, 
+        $color-2 20px, $color-3 21px,
+        $color-3 30px, $color-4 31px,
+        $color-4 40px, $color-5 41px,
+        $color-5 50px)  center repeat;
+    background-size: 50px 100%;    
+    } 
+.decor--circles {
+    display: inline-block;
+    position: relative;
+    padding: 10px 15px;
+    overflow: hidden;
+    border-radius: 30px;
+    vertical-align: middle;
+    &:before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        bottom: 1px;
+        left: 1px;
+        width: 2px;
+        height: 2px;
+        margin: auto;
+        border-radius: 50%;
+        box-shadow: 0 0 0 -50px $color-1,
+                    0 0 0 -40px $color-2,
+                    0 0 0 -30px $color-3,
+                    0 0 0 -20px $color-4,
+                    0 0 0 -10px $color-5,
+                    0 0 0 0 $color-1,
+                    0 0 0 10px $color-2,
+                    0 0 0 20px $color-3,
+                    0 0 0 30px $color-4,
+                    0 0 0 40px $color-5,
+                    0 0 0 50px $color-1,
+                    0 0 0 60px $color-2,
+                    0 0 0 70px $color-3,
+                    0 0 0 80px $color-4,
+                    0 0 0 90px $color-5,
+                    0 0 0 100px $color-1,
+                    0 0 0 110px $color-2,
+                    0 0 0 120px $color-3,
+                    0 0 0 130px $color-4,
+                    0 0 0 140px $color-5
+                    ;
+        animation: 3s circles infinite linear; 
+    }
+}    
+
+@keyframes circles {
+    100% {
+        box-shadow: 0 0 0 0px $color-1,
+                    0 0 0 10px $color-2,
+                    0 0 0 20px $color-3,
+                    0 0 0 30px $color-4,
+                    0 0 0 40px $color-5,
+                    0 0 0 50px $color-1,
+                    0 0 0 60px $color-2,
+                    0 0 0 70px $color-3,
+                    0 0 0 80px $color-4,
+                    0 0 0 90px $color-5,
+                    0 0 0 100px $color-1,
+                    0 0 0 110px $color-2,
+                    0 0 0 120px $color-3,
+                    0 0 0 130px $color-4,
+                    0 0 0 140px $color-5,
+                    0 0 0 150px $color-1,
+                    0 0 0 160px $color-2,
+                    0 0 0 170px $color-3,
+                    0 0 0 180px $color-4,
+                    0 0 0 190px $color-5
+                    ;
+    }
+} 
+
 /* Layout
 ---------------------------------------- */
 .wrapper {
@@ -84,7 +180,6 @@ A {
     .section {
         position: relative;
         margin-bottom: $offset;
-        /*padding-bottom: 30px;*/
         /*background: url(/task.png) -27px 0 repeat;*/
         /*border: 1px solid silver;*/
         &:after {
@@ -105,7 +200,6 @@ A {
         }      
     .section--browsers {
         background-position: -20px -212px;  
-        /*background: none;*/
         }  
     .section--text {
         
@@ -118,10 +212,10 @@ A {
     margin-right: $offset;
     padding: 0;
     vertical-align: middle;
-    /*&:after {
-        @include clear;
-        }*/
     }
+    .decor--bg .rating {
+        margin-right: 0;
+        }
     .rating__item {
         display: block;
         float: left;
@@ -240,74 +334,6 @@ A {
         }
     }
     
-.decore--bg {
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 10px;
-    background: gold;
-    background: linear-gradient( 90deg, 
-        indigo 10px, red 11px, 
-        red 20px, orange 21px,
-        orange 30px, gold 31px,
-        gold 40px, yellowgreen 41px,
-        yellowgreen 50px, steelblue 51px,
-        steelblue 60px)  center repeat;
-    background-size: 60px 100%;    
-    } 
-.decore--circles {
-    display: inline-block;
-    position: relative;
-    padding: 10px 15px;
-    overflow: hidden;
-    border-radius: 30px;
-    vertical-align: middle;
-    &:before {
-        content: "";
-        position: absolute;
-        top: -1px;
-        right: -1px;
-        bottom: 1px;
-        left: 1px;
-        width: 2px;
-        height: 2px;
-        margin: auto;
-        border-radius: 50%;
-        box-shadow: 0 0 0 0 white,
-                    0 0 0 5px $circle-color,
-                    0 0 0 15px white,
-                    0 0 0 25px $circle-color,
-                    0 0 0 35px white,
-                    0 0 0 45px $circle-color,
-                    0 0 0 55px white,
-                    0 0 0 65px lighten($circle-color, 30),
-                    0 0 0 75px white,
-                    0 0 0 85px lighten($circle-color, 40),
-                    0 0 0 95px white,
-                    0 0 0 105px lighten($circle-color, 50),
-                    0 0 0 115px white,
-                    0 0 0 125px lighten($circle-color, 60);
-        animation: 1s circles infinite linear; 
-    }
-}     
-
-@keyframes circles {
-    100% {
-        box-shadow: 0 0 0 5px white,
-                    0 0 0 25px $circle-color,
-                    0 0 0 35px white,
-                    0 0 0 45px $circle-color,
-                    0 0 0 55px white,
-                    0 0 0 65px lighten($circle-color, 30),
-                    0 0 0 75px white,
-                    0 0 0 85px lighten($circle-color, 40),
-                    0 0 0 95px white,
-                    0 0 0 105px lighten($circle-color, 50),
-                    0 0 0 115px white,
-                    0 0 0 125px lighten($circle-color, 60),
-                    0 0 0 135px white,
-                    0 0 0 145px lighten($circle-color, 70);
-    }
-}          
 /* Browsers
 ---------------------------------------- */
 .browsers__item {

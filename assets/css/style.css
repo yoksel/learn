@@ -1,3 +1,4 @@
+/*$circle-color: lightblue;*/
 html, body, div, span, h1, h2, h3, h4, h5, h6,
 p, a, img, b, i, dl, dt, dd, ol, ul, li,
 label, article, aside, footer, header, section {
@@ -88,6 +89,58 @@ A:hover {
   padding-left: 45px;
 }
 
+/* Decor
+---------------------------------------- */
+.decor--bg {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: #ffd393;
+  background: -webkit-linear-gradient(0deg, #405952 10px, #9c9b7a 11px, #9c9b7a 20px, #ffd393 21px, #ffd393 30px, #ff974f 31px, #ff974f 40px, #f54f29 41px, #f54f29 50px) center repeat;
+  background: linear-gradient(90deg, #405952 10px, #9c9b7a 11px, #9c9b7a 20px, #ffd393 21px, #ffd393 30px, #ff974f 31px, #ff974f 40px, #f54f29 41px, #f54f29 50px) center repeat;
+  -webkit-background-size: 50px 100%;
+  background-size: 50px 100%;
+}
+
+.decor--circles {
+  display: inline-block;
+  position: relative;
+  padding: 10px 15px;
+  overflow: hidden;
+  border-radius: 30px;
+  vertical-align: middle;
+}
+.decor--circles:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: 1px;
+  left: 1px;
+  width: 2px;
+  height: 2px;
+  margin: auto;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 -50px #405952, 0 0 0 -40px #9c9b7a, 0 0 0 -30px #ffd393, 0 0 0 -20px #ff974f, 0 0 0 -10px #f54f29, 0 0 0 0 #405952, 0 0 0 10px #9c9b7a, 0 0 0 20px #ffd393, 0 0 0 30px #ff974f, 0 0 0 40px #f54f29, 0 0 0 50px #405952, 0 0 0 60px #9c9b7a, 0 0 0 70px #ffd393, 0 0 0 80px #ff974f, 0 0 0 90px #f54f29, 0 0 0 100px #405952, 0 0 0 110px #9c9b7a, 0 0 0 120px #ffd393, 0 0 0 130px #ff974f, 0 0 0 140px #f54f29;
+  box-shadow: 0 0 0 -50px #405952, 0 0 0 -40px #9c9b7a, 0 0 0 -30px #ffd393, 0 0 0 -20px #ff974f, 0 0 0 -10px #f54f29, 0 0 0 0 #405952, 0 0 0 10px #9c9b7a, 0 0 0 20px #ffd393, 0 0 0 30px #ff974f, 0 0 0 40px #f54f29, 0 0 0 50px #405952, 0 0 0 60px #9c9b7a, 0 0 0 70px #ffd393, 0 0 0 80px #ff974f, 0 0 0 90px #f54f29, 0 0 0 100px #405952, 0 0 0 110px #9c9b7a, 0 0 0 120px #ffd393, 0 0 0 130px #ff974f, 0 0 0 140px #f54f29;
+  -webkit-animation: 3s circles infinite linear;
+  animation: 3s circles infinite linear;
+}
+
+@-webkit-keyframes circles {
+  100% {
+    -webkit-box-shadow: 0 0 0 0px #405952, 0 0 0 10px #9c9b7a, 0 0 0 20px #ffd393, 0 0 0 30px #ff974f, 0 0 0 40px #f54f29, 0 0 0 50px #405952, 0 0 0 60px #9c9b7a, 0 0 0 70px #ffd393, 0 0 0 80px #ff974f, 0 0 0 90px #f54f29, 0 0 0 100px #405952, 0 0 0 110px #9c9b7a, 0 0 0 120px #ffd393, 0 0 0 130px #ff974f, 0 0 0 140px #f54f29, 0 0 0 150px #405952, 0 0 0 160px #9c9b7a, 0 0 0 170px #ffd393, 0 0 0 180px #ff974f, 0 0 0 190px #f54f29;
+    box-shadow: 0 0 0 0px #405952, 0 0 0 10px #9c9b7a, 0 0 0 20px #ffd393, 0 0 0 30px #ff974f, 0 0 0 40px #f54f29, 0 0 0 50px #405952, 0 0 0 60px #9c9b7a, 0 0 0 70px #ffd393, 0 0 0 80px #ff974f, 0 0 0 90px #f54f29, 0 0 0 100px #405952, 0 0 0 110px #9c9b7a, 0 0 0 120px #ffd393, 0 0 0 130px #ff974f, 0 0 0 140px #f54f29, 0 0 0 150px #405952, 0 0 0 160px #9c9b7a, 0 0 0 170px #ffd393, 0 0 0 180px #ff974f, 0 0 0 190px #f54f29;
+  }
+}
+
+@keyframes circles {
+  100% {
+    -webkit-box-shadow: 0 0 0 0px #405952, 0 0 0 10px #9c9b7a, 0 0 0 20px #ffd393, 0 0 0 30px #ff974f, 0 0 0 40px #f54f29, 0 0 0 50px #405952, 0 0 0 60px #9c9b7a, 0 0 0 70px #ffd393, 0 0 0 80px #ff974f, 0 0 0 90px #f54f29, 0 0 0 100px #405952, 0 0 0 110px #9c9b7a, 0 0 0 120px #ffd393, 0 0 0 130px #ff974f, 0 0 0 140px #f54f29, 0 0 0 150px #405952, 0 0 0 160px #9c9b7a, 0 0 0 170px #ffd393, 0 0 0 180px #ff974f, 0 0 0 190px #f54f29;
+    box-shadow: 0 0 0 0px #405952, 0 0 0 10px #9c9b7a, 0 0 0 20px #ffd393, 0 0 0 30px #ff974f, 0 0 0 40px #f54f29, 0 0 0 50px #405952, 0 0 0 60px #9c9b7a, 0 0 0 70px #ffd393, 0 0 0 80px #ff974f, 0 0 0 90px #f54f29, 0 0 0 100px #405952, 0 0 0 110px #9c9b7a, 0 0 0 120px #ffd393, 0 0 0 130px #ff974f, 0 0 0 140px #f54f29, 0 0 0 150px #405952, 0 0 0 160px #9c9b7a, 0 0 0 170px #ffd393, 0 0 0 180px #ff974f, 0 0 0 190px #f54f29;
+  }
+}
+
 /* Layout
 ---------------------------------------- */
 .wrapper {
@@ -111,7 +164,6 @@ A:hover {
 .section {
   position: relative;
   margin-bottom: 40px;
-  /*padding-bottom: 30px;*/
   /*background: url(/task.png) -27px 0 repeat;*/
   /*border: 1px solid silver;*/
 }
@@ -140,7 +192,6 @@ A:hover {
 
 .section--browsers {
   background-position: -20px -212px;
-  /*background: none;*/
 }
 
 /* Rating
@@ -150,9 +201,10 @@ A:hover {
   margin-right: 40px;
   padding: 0;
   vertical-align: middle;
-  /*&:after {
-      @include clear;
-      }*/
+}
+
+.decor--bg .rating {
+  margin-right: 0;
 }
 
 .rating__item {
@@ -297,56 +349,6 @@ A:hover {
 .button:active:hover {
   -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.26);
   box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.26);
-}
-
-.decore--bg {
-  display: inline-block;
-  padding: 10px 15px;
-  border-radius: 10px;
-  background: gold;
-  background: -webkit-linear-gradient(0deg, indigo 10px, red 11px, red 20px, orange 21px, orange 30px, gold 31px, gold 40px, yellowgreen 41px, yellowgreen 50px, steelblue 51px, steelblue 60px) center repeat;
-  background: linear-gradient(90deg, indigo 10px, red 11px, red 20px, orange 21px, orange 30px, gold 31px, gold 40px, yellowgreen 41px, yellowgreen 50px, steelblue 51px, steelblue 60px) center repeat;
-  -webkit-background-size: 60px 100%;
-  background-size: 60px 100%;
-}
-
-.decore--circles {
-  display: inline-block;
-  position: relative;
-  padding: 10px 15px;
-  overflow: hidden;
-  border-radius: 30px;
-  vertical-align: middle;
-}
-.decore--circles:before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  bottom: 1px;
-  left: 1px;
-  width: 2px;
-  height: 2px;
-  margin: auto;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 0 white, 0 0 0 5px lightblue, 0 0 0 15px white, 0 0 0 25px lightblue, 0 0 0 35px white, 0 0 0 45px lightblue, 0 0 0 55px white, 0 0 0 65px white, 0 0 0 75px white, 0 0 0 85px white, 0 0 0 95px white, 0 0 0 105px white, 0 0 0 115px white, 0 0 0 125px white;
-  box-shadow: 0 0 0 0 white, 0 0 0 5px lightblue, 0 0 0 15px white, 0 0 0 25px lightblue, 0 0 0 35px white, 0 0 0 45px lightblue, 0 0 0 55px white, 0 0 0 65px white, 0 0 0 75px white, 0 0 0 85px white, 0 0 0 95px white, 0 0 0 105px white, 0 0 0 115px white, 0 0 0 125px white;
-  -webkit-animation: 1s circles infinite linear;
-  animation: 1s circles infinite linear;
-}
-
-@-webkit-keyframes circles {
-  100% {
-    -webkit-box-shadow: 0 0 0 5px white, 0 0 0 25px lightblue, 0 0 0 35px white, 0 0 0 45px lightblue, 0 0 0 55px white, 0 0 0 65px white, 0 0 0 75px white, 0 0 0 85px white, 0 0 0 95px white, 0 0 0 105px white, 0 0 0 115px white, 0 0 0 125px white, 0 0 0 135px white, 0 0 0 145px white;
-    box-shadow: 0 0 0 5px white, 0 0 0 25px lightblue, 0 0 0 35px white, 0 0 0 45px lightblue, 0 0 0 55px white, 0 0 0 65px white, 0 0 0 75px white, 0 0 0 85px white, 0 0 0 95px white, 0 0 0 105px white, 0 0 0 115px white, 0 0 0 125px white, 0 0 0 135px white, 0 0 0 145px white;
-  }
-}
-
-@keyframes circles {
-  100% {
-    -webkit-box-shadow: 0 0 0 5px white, 0 0 0 25px lightblue, 0 0 0 35px white, 0 0 0 45px lightblue, 0 0 0 55px white, 0 0 0 65px white, 0 0 0 75px white, 0 0 0 85px white, 0 0 0 95px white, 0 0 0 105px white, 0 0 0 115px white, 0 0 0 125px white, 0 0 0 135px white, 0 0 0 145px white;
-    box-shadow: 0 0 0 5px white, 0 0 0 25px lightblue, 0 0 0 35px white, 0 0 0 45px lightblue, 0 0 0 55px white, 0 0 0 65px white, 0 0 0 75px white, 0 0 0 85px white, 0 0 0 95px white, 0 0 0 105px white, 0 0 0 115px white, 0 0 0 125px white, 0 0 0 135px white, 0 0 0 145px white;
-  }
 }
 
 /* Browsers
