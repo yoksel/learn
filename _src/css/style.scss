@@ -21,7 +21,7 @@ $color-5: #F54F29;
 
 BODY {
     background: white;
-    font: $size-16/1.4 'PT Sans', 'Trebuchet MS', sans-serif;;
+    font: #{$size-16}/1.4 'PT Sans', 'Trebuchet MS', sans-serif;;
     }
 H1, H2, H3, H4 {
     font-weight: normal;
@@ -418,4 +418,3 @@ A {
     .columns__item--right {
         padding-left: 45px;
         } 
-        
