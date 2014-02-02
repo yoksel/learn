@@ -58,10 +58,6 @@ A:hover {
   cursor: pointer;
 }
 
-.hide {
-  /*display: none;*/
-}
-
 .list--dash__item:before {
   content: "\2014";
   position: relative;
@@ -80,6 +76,12 @@ A:hover {
   -webkit-box-shadow: inset 0 1px 1px #DDD;
   box-shadow: inset 0 1px 1px #DDD;
   font: 11px/1.4 Verdana, sans-serif;
+}
+
+.hint {
+  font-size: 13px;
+  font-style: italic;
+  color: #AAA;
 }
 
 /* Decor
@@ -151,39 +153,17 @@ A:hover {
   border-image: url(http://img-fotki.yandex.ru/get/9555/5091629.9a/0_7ec51_1cf902d3_L.png) 8% 5% 13% 7%;
   -webkit-box-shadow: 0 0 0 1px whitesmoke inset;
   box-shadow: 0 0 0 1px whitesmoke inset;
-  /*opacity: .4;*/
 }
 
 .section {
   position: relative;
   margin-bottom: 40px;
-  /*background: url(/task.png) -27px 0 repeat;*/
 }
 .section:after {
   content: "";
   display: table;
   width: 100%;
   clear: both;
-}
-
-.section--intro {
-  background: none;
-}
-
-.section--rating {
-  background-position: -27px -36px;
-}
-
-.section--progress {
-  background-position: -28px -75px;
-}
-
-.section--button {
-  background-position: -27px -105px;
-}
-
-.section--browsers {
-  background-position: -20px -212px;
 }
 
 /* Rating
@@ -342,6 +322,10 @@ A:hover {
 .button:active:hover {
   -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.26);
   box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.26);
+}
+
+.section--button DIV:first-child {
+  margin-bottom: 30px;
 }
 
 /* Browsers
